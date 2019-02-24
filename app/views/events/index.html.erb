@@ -1,0 +1,18 @@
+<h2>イベント情報</h2>
+
+  <% if @events.any? %>
+  <% @events.each do |event| %>
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3><%= event.title %></h3>
+        <p><%= event.subtitle %></p>
+        <h4><%= event.hold_at %></h4>
+        <p><%= event.place %><p>
+      </div>
+    </div>
+  <% end %>
+  
+  <div>
+    <%= paginate @events %>
+  </div>
+<% end %>

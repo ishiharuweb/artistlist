@@ -1,0 +1,18 @@
+<h2>ライブ情報</h2>
+
+  <% if @concerts.any? %>
+  <% @concerts.each do |concert| %>
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3><%= concert.title %></h3>
+        <p><%= concert.subtitle %></p>
+        <h4><%= concert.hold_at %></h4>
+        <p><%= concert.place %><p>
+      </div>
+    </div>
+  <% end %>
+  
+  <div>
+    <%= paginate @concerts %>
+  </div>
+<% end %>

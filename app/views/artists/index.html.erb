@@ -1,0 +1,23 @@
+<h1>アーティスト一覧</h1>
+
+<% if @artists.any? %>
+
+  <table class="table table-striped">
+    <tbody>
+      <% @artists.each do |artist| %>
+        <tr>
+          <td>
+            <%= link_to artist.name, artist %>
+          </td>
+          <td>
+            <%= artist.category %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <div>
+    <%= paginate @artists %>
+  </div>
+<% end %>

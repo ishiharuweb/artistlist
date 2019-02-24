@@ -1,0 +1,18 @@
+<h2>ラジオ情報</h2>
+
+  <% if @radio_programs.any? %>
+  <% @radio_programs.each do |radio_program| %>
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3><%= radio_program.title %></h3>
+        <p><%= radio_program.subtitle %></p>
+        <h4><%= radio_program.hold_at %></h4>
+        <p><%= radio_program.place %><p>
+      </div>
+    </div>
+  <% end %>
+  
+  <div>
+    <%= paginate @radio_programs %>
+  </div>
+<% end %>

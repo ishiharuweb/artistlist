@@ -1,0 +1,7 @@
+<h2><%= @artist.name %></h2>
+<p><%= @artist.category %><p>
+<div><%= simple_format @artist.information.gsub(/\n|\r/, "<br>") %></div>
+
+<%= link_to 'ライブ情報', concerts_path(artist_id: @artist.id), class: 'btn btn-lg btn-warning btn-block' %>
+<%= link_to 'イベント情報', events_path(artist_id: @artist.id), class: 'btn btn-lg btn-warning btn-block' %>
+<%= link_to 'ラジオ情報', radio_programs_path(artist_id: @artist.id), class: 'btn btn-lg btn-warning btn-block' %>
